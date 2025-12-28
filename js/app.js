@@ -19,10 +19,8 @@ if (contenedor) {
 
 function reservar(id) {
     const pelicula = peliculas.find(p => p.id === id);
-    let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-    reservas.push(pelicula);
-    localStorage.setItem("reservas", JSON.stringify(reservas));
-    alert("Reserva guardada");
+    localStorage.setItem("peliculaSeleccionada", JSON.stringify(pelicula));
+    window.location.href = "asientos.html";
 }
 
 const lista = document.getElementById("lista-reservas");
