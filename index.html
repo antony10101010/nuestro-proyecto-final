@@ -1,14 +1,16 @@
-<script>
-    if (!localStorage.getItem("usuario")) {
-        window.location.href = "login.html";
-    }
-</script>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>CineMax</title>
     <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Validación de sesión -->
+    <script>
+        if (!localStorage.getItem("usuario")) {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
 
@@ -24,7 +26,17 @@
 <main>
     <h2>Bienvenido a CineMax</h2>
     <p>Sistema básico de reservas de cine</p>
+
+    <button onclick="logout()">Cerrar Sesión</button>
 </main>
+
+<!-- Logout -->
+<script>
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+</script>
 
 </body>
 </html>
