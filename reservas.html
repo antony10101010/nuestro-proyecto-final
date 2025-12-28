@@ -1,20 +1,38 @@
-<script>
-    if (!localStorage.getItem("usuario")) {
-        window.location.href = "login.html";
-    }
-</script>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Reservas</title>
     <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Validación de sesión -->
+    <script>
+        if (!localStorage.getItem("usuario")) {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
 
 <h1>Mis Reservas</h1>
 <ul id="lista-reservas"></ul>
 
+<!-- Lógica principal -->
 <script src="js/app.js"></script>
+
+<!-- Mostrar reserva seleccionada -->
+<script>
+    const pelicula = JSON.parse(localStorage.getItem("peliculaSeleccionada"));
+    const asiento = localStorage.getItem("asiento");
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+    if (pelicula && asiento && usuario) {
+        const ul = document.getElementById("lista-reservas");
+        const li = document.createElement("li");
+        li.textContent = `${usuario.correo} | ${pelicula.titulo} | Asiento ${asiento}`;
+        ul.appendChild(li);
+    }
+</script>
+
 </body>
 </html>
