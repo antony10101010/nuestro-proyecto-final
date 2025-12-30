@@ -43,5 +43,10 @@ Integrantes
 Trabajo Colaborativo
 Proyecto desarrollado utilizando Git y GitHub para el control de versiones y el trabajo en equipo.
 Proyecto desarollado por analy y butron el dia 29 de diciembre 
+<<<<<<< HEAD
 al realizar este proyecto fue algo nuevo
 holiiii 
+=======
+- hola hola hola hola 
+- petit tiene que salir el log modifica esto 
+>>>>>>> cb9a0ffad8b3b9599c11c59c8f328575c68d5d3e
